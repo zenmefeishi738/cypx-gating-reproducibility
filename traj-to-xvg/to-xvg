@@ -1,0 +1,9 @@
+# d_mouth_A_APO.xvg  ——  BC_CA_A ↔ FG_CA_A 的质心距离
+gmx distance -s step5_1.tpr -f step5_1.xtc -n index.ndx \
+  -select 'com of group "BC_CA_A" plus com of group "FG_CA_A"' \
+  -oall d_mouth_A_APO.xvg -tu ns
+
+# d_cover_A_APO.xvg  ——  FG_CA_A 质心 ↔ HEME_FE_A（Fe 原子）
+gmx distance -s step5_1.tpr -f step5_1.xtc -n index.ndx \
+  -select 'com of group "FG_CA_A" plus group "HEME_FE_A"' \
+  -oall d_cover_A_APO.xvg -tu ns
