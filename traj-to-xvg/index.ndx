@@ -1,0 +1,10 @@
+# 交互或脚本方式创建（按你体系的链/残基号调整）
+gmx make_ndx -f step5_1.tpr -o index.ndx << 'EOF'
+a CA & r 55-90  & chain A
+name 1 BC_CA_A
+a CA & r 198-203 & chain A
+name 2 FG_CA_A
+r HEM & a FE & chain A      # 若你的血红素名不是 HEM，请改成 HEC/HEM1 等
+name 3 HEME_FE_A
+q
+EOF
